@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sloane Sterling — Elite Feminine Power</title>
+  <meta name="description" content="Sloane Sterling is defining the future of elite feminine power — where movement, luxury, and obsession collide. Fashion, fitness, and travel — curated and engineered for women who refuse normal." />
+  <meta name="theme-color" content="#0b0f17" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Sloane Sterling — Elite Feminine Power" />
+  <meta property="og:description" content="Movement, luxury, and obsession — collide." />
+  <meta property="og:image" content="/assets/og-cover.jpg" />
+  <meta property="og:url" content="https://sloanesterling.com/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon (replace with your own) -->
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preload" as="image" href="/assets/hero-poster.jpg" />
+  <link rel="preload" as="video" href="/assets/hero.mp4" />
+  <style>
+    :root{
+      --bg:#0b0f17; /* deep midnight */
+      --card:#0f1522; /* card surface */
+      --muted:#9fb0c6; /* muted text */
+      --text:#f7f9fc; /* main text */
+      --accent1:#7df9ff; /* electric cyan */
+      --accent2:#ff5ea8; /* magenta */
+      --ring: 0 0 0 2px color-mix(in oklab, var(--accent1) 60%, transparent);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; background:radial-gradient(1200px 600px at 75% -10%, #132033 0%, transparent 70%),
+                      radial-gradient(1000px 500px at 10% 10%, #1a263d 0%, transparent 70%),
+                      var(--bg);
+      color:var(--text); font: 500 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+      -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:1200px; margin-inline:auto; padding: clamp(16px, 2.5vw, 32px)}
+
+    /* Header */
+    header{position:fixed; inset-inline:0; top:0; z-index:50; backdrop-filter:saturate(140%) blur(8px);
+      background:linear-gradient(to bottom, rgba(11,15,23,.75), rgba(11,15,23,.25), transparent);
+      border-bottom:1px solid rgba(125,249,255,.08);
+    }
+    .brand{display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.12em; text-transform:uppercase}
+    .brand .dot{width:10px; height:10px; border-radius:50%; background:linear-gradient(135deg, var(--accent1), var(--accent2)); box-shadow:0 0 16px color-mix(in oklab, var(--accent1) 70%, #000 30%)}
+    .nav{display:flex; gap:22px; align-items:center}
+    .nav a{opacity:.8}
+    .nav a:hover{opacity:1}
+
+    /* Hero */
+    .hero{position:relative; min-height: 88svh; display:grid; place-items:center; overflow:hidden}
+    .hero video, .hero .poster{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center}
+    .hero .overlay{position:absolute; inset:0; background:linear-gradient(180deg, rgba(6,9,15,.45), rgba(7,10,18,.7) 60%, rgba(11,15,23,.92));}
+    .hero .content{position:relative; z-index:1; text-align:center; padding: min(5vw, 56px)}
+    h1{font-size:clamp(28px, 5.5vw, 64px); line-height:1.05; margin:0 0 18px; letter-spacing:-.01em}
+    .sub{color:var(--muted); font-size: clamp(14px, 1.6vw, 18px); max-width:850px; margin: 0 auto 28px}
+    .ctas{display:flex; flex-wrap:wrap; gap:12px; justify-content:center}
+    .btn{--bg:color-mix(in oklab, var(--accent1) 10%, #0d1421); background: var(--bg);
+      border:1px solid rgba(125,249,255,.25); color:var(--text); padding:12px 18px; border-radius:14px; font-weight:650;
+      box-shadow: 0 6px 20px rgba(0,0,0,.35), inset 0 0 24px rgba(125,249,255,.09);
+      transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+      display:inline-flex; align-items:center; gap:10px}
+    .btn:hover{transform:translateY(-1px); box-shadow:0 10px 28px rgba(0,0,0,.5), inset 0 0 28px rgba(125,249,255,.14); border-color: rgba(125,249,255,.55)}
+    .btn.primary{background:linear-gradient(135deg, color-mix(in oklab, var(--accent1) 28%, #0b0f17), color-mix(in oklab, var(--accent2) 18%, #0b0f17));}
+    .btn.ghost{background:transparent; border-color:rgba(255,255,255,.24)}
+
+    /* Sections */
+    section{scroll-margin-top:84px}
+    .section{padding: clamp(42px, 6vw, 90px) 0}
+    .title{font-size: clamp(22px, 3.6vw, 40px); margin:0 0 18px}
+    .eyebrow{color:var(--accent1); text-transform:uppercase; letter-spacing:.22em; font-size:12px; margin-bottom:10px; display:inline-block}
+    .grid{display:grid; gap:16px; grid-template-columns:repeat(1,minmax(0,1fr))}
+    @media (min-width:720px){.grid{grid-template-columns:repeat(2, minmax(0,1fr))}}
+    @media (min-width:1024px){.grid{grid-template-columns:repeat(3, minmax(0,1fr))}}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01)); border:1px solid rgba(255,255,255,.08);
+      border-radius:18px; overflow:hidden; position:relative; isolation:isolate}
+    .card .media{aspect-ratio: 4 / 3; background:#111; position:relative}
+    .card .media img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
+    .card .body{padding:16px}
+    .card h3{font-size: clamp(16px, 1.8vw, 20px); margin:0 0 8px}
+    .card p{color:var(--muted); margin:0 0 12px}
+    .card .tags{display:flex; flex-wrap:wrap; gap:8px; margin:8px 0 0}
+    .tag{font-size:12px; opacity:.82; border:1px solid rgba(255,255,255,.16); padding:6px 8px; border-radius:999px}
+
+    /* Partner links as luxe list */
+    .list{display:grid; gap:12px}
+    .linkrow{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 16px; border:1px solid rgba(255,255,255,.08); border-radius:14px; background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015))}
+    .linkrow span{color:var(--muted)}
+
+    /* Footer */
+    footer{border-top:1px solid rgba(255,255,255,.08); padding:32px 0; color:var(--muted)}
+
+    /* Accessibility / motion */
+    @media (prefers-reduced-motion: reduce){
+      .hero video{display:none}
+      .hero .poster{display:block}
+    }
+    .fade-up{opacity:0; transform:translateY(12px); animation:fadeUp .9s ease .2s forwards;}
+  @keyframes fadeUp{to{opacity:1; transform:translateY(0);}}
+</style>
+</head>
+<body>
+  <header>
+    <div class="wrap" style="display:flex; align-items:center; justify-content:space-between; gap:18px">
+      <a class="brand" href="#top" aria-label="Sloane Sterling home">
+        <span class="dot"></span>
+        <span>Sloane&nbsp;Sterling</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#shop">Shop</a>
+        <a href="#partners">Exclusive Access</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero" aria-label="Cinematic hero">
+      <video id="heroVideo" class="media" autoplay muted loop playsinline preload="none" poster="/assets/hero-poster.jpg">
+        <source src="/assets/hero.mp4" type="video/mp4" />
+        <!-- Optional WebM for extra efficiency: <source src="/assets/hero.webm" type="video/webm" /> -->
+      </video>
+      <img class="poster" alt="Athletic luxury mood image" src="/assets/hero-poster.jpg" loading="eager" aria-hidden="true" />
+      <div class="overlay" aria-hidden="true"></div>
+      <div class="content wrap">
+        <h1>Sloane Sterling is defining the future of elite feminine power — where movement, luxury, and obsession collide.</h1>
+        <p class="sub">Cinematic lifestyle. High-performance fashion. Global experiences. Curated for women who refuse normal.</p>
+        <div class="ctas">
+          <a class="btn primary" href="#shop" aria-label="Shop Sloane's Edit">⚡ Shop Sloane’s Edit</a>
+          <a class="btn ghost" href="#partners" aria-label="Exclusive access partner links">VIP Exclusive Access</a>
+          <a class="btn ghost" href="https://tr.ee/majTfW" target="_blank" rel="noopener" aria-label="View Instagram posts and Shop This Look">View Posts → Shop This Look</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST BAR -->
+    <section class="wrap fade-up" style="padding:32px 0; text-align:center; opacity:.85">
+      <p style="font-size:14px; letter-spacing:.18em; text-transform:uppercase; margin-bottom:18px; color:var(--muted)">As Seen In</p>
+      <div style="display:flex; gap:32px; justify-content:center; flex-wrap:wrap; opacity:.9">
+        <img src="/assets/logo-placeholder-vogue.svg" alt="Vogue" style="height:28px; filter:grayscale(1); opacity:.6; max-width:120px; object-fit:contain" />
+        <img src="/assets/logo-placeholder-nike.svg" alt="Nike" style="height:28px" />
+        <img src="/assets/logo-placeholder-harpers.svg" alt="Harper's Bazaar" style="height:28px" />
+      </div>
+    </section>
+
+    <!-- SHOP THIS LOOK (under hero) -->
+    <section id="look" class="section wrap" aria-labelledby="look-title">
+      <span class="eyebrow">Shop This Look</span>
+      <h2 id="look-title" class="title">What Sloane’s Wearing</h2>
+      <p class="sub">Curated, high‑performance pieces that match the hero vibe. Affiliate links; your price stays the same.</p>
+      <div class="grid">
+        <article class="card">
+          <div class="media"><img alt="elite performance sport bra on strong athletic feminine physique" src="/assets/sloane-sterling-performance-sport-bra-elite-fitness.jpg" loading="lazy" /></div></div>
+          <div class="body">
+            <h3>Performance Bra</h3>
+            <p>Supportive, sleek, editorial‑ready.</p>
+            <p style="margin-top:12px"><a class="btn" href="https://tr.ee/zLE81K" target="_blank" rel="noopener">Shop Bra</a></p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="media"><img alt="Compression leggings — black, sculpted fit" src="/assets/look-leggings.jpg" loading="lazy" /></div>
+          <div class="body">
+            <h3>Sculpt Leggings</h3>
+            <p>Gym‑to‑street silhouette with pro fit.</p>
+            <p style="margin-top:12px"><a class="btn" href="https://tr.ee/98tCjO" target="_blank" rel="noopener">Shop Leggings</a></p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="media"><img alt="Lightweight trainers — neutral tone" src="/assets/look-shoes.jpg" loading="lazy" /></div>
+          <div class="body">
+            <h3>Lightweight Trainers</h3>
+            <p>Responsive ride; studio to city.</p>
+            <p style="margin-top:12px"><a class="btn" href="https://tr.ee/Y5kWYr" target="_blank" rel="noopener">Shop Shoes</a></p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="media"><img alt="Insulated water bottle — matte black" src="/assets/look-bottle.jpg" loading="lazy" /></div>
+          <div class="body">
+            <h3>Matte Bottle</h3>
+            <p>Hydration staple; minimal and durable.</p>
+            <p style="margin-top:12px"><a class="btn" href="https://tr.ee/9dNryN" target="_blank" rel="noopener">Shop Accessories</a></p>
+          </div>
+        </article>
+      </div>
+      <p class="sub" style="margin-top:18px">Want the exact reel outfits? <a class="btn ghost" href="https://tr.ee/majTfW" target="_blank" rel="noopener">View Posts → Shop This Look</a></p>
+    </section>
+
+    <!-- SHOP -->
+    <section id="shop" class="section wrap">
+      <span class="eyebrow">Curated by Sloane</span>
+      <h2 class="title">Sloane’s Collections</h2>
+      <div class="grid">
+        <!-- CARD 1: Fall Edit -->
+        <article class="card">
+          <div class="media">
+            <img alt="Fall fashion edit — elevated neutrals and layered textures" src="/assets/fall-edit.jpg" loading="lazy" />
+          </div>
+          <div class="body">
+            <h3>Fall Edit</h3>
+            <p>Quiet-luxury layers, city-to-studio pieces. The season’s power essentials.</p>
+            <div class="tags"><span class="tag">elevated basics</span><span class="tag">under $100</span></div>
+            <p style="margin-top:12px"><a class="btn" href="#early" rel="noopener">COMING SOON — BE FIRST TO ACCESS</a></p>
+          </div>
+        </article>
+
+        <!-- CARD 2: Nike Sportswear -->
+        <article class="card">
+          <div class="media">
+            <img alt="Nike sportswear edit — high-performance feminine silhouettes" src="/assets/nike-edit.jpg" loading="lazy" />
+          </div>
+          <div class="body">
+            <h3>Nike Sportswear</h3>
+            <p>Elite feminine performance — power leggings, iconic bras, and training staples.</p>
+            <div class="tags"><span class="tag">pro fit</span><span class="tag">gym to street</span></div>
+            <p style="margin-top:12px"><a class="btn" href="#early" rel="noopener">COMING SOON — BE FIRST TO ACCESS</a></p>
+          </div>
+        </article>
+
+        <!-- CARD 3: Luxury Dupes -->
+        <article class="card">
+          <div class="media">
+            <img alt="Luxury dupe collection — Prada, LV, Ferragamo inspired" src="/assets/dupes-edit.jpg" loading="lazy" />
+          </div>
+          <div class="body">
+            <h3>Luxury Designer Look‑Alikes</h3>
+            <p>Prada / LV / Ferragamo inspired — curated look‑alikes at a fraction of the cost.</p>
+            <div class="tags"><span class="tag">editorial looks</span><span class="tag">amazon finds</span></div>
+            <p style="margin-top:12px"><a class="btn" href="#early" rel="noopener">COMING SOON — BE FIRST TO ACCESS</a></p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- PARTNERS / EXCLUSIVE ACCESS -->
+    <section id="partners" class="section wrap">
+      <span class="eyebrow">Exclusive Access</span>
+      <h2 class="title">Partner Links</h2>
+      <div class="list">
+        <div class="linkrow">
+          <div>
+            <strong>FACTOR Meals</strong><br /><span>Chef-prepared meals — nutrition for high performance</span>
+          </div>
+          <a class="btn" href="https://tr.ee/SEzrot4Ici" target="_blank" rel="noopener">Explore</a>
+        </div>
+        <div class="linkrow">
+          <div>
+            <strong>Maev Pet Food</strong><br /><span>Human-grade raw food for dogs</span>
+          </div>
+          <a class="btn" href="https://tr.ee/EZ_BNaSyiU" target="_blank" rel="noopener">Shop</a>
+        </div>
+        <div class="linkrow">
+          <div>
+            <strong>Hiya Kids Vitamins</strong><br /><span>Clean daily vitamins kids actually love</span>
+          </div>
+          <a class="btn" href="https://tr.ee/WB2Mc1DGrK" target="_blank" rel="noopener">Shop</a>
+        </div>
+        <div class="linkrow">
+          <div>
+            <strong>Brand Collaborations</strong><br /><span>Partnership inquiries & paid UGC</span>
+          </div>
+          <a class="btn" href="#contact">Contact</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section wrap">
+      <span class="eyebrow">Connect</span>
+      <h2 class="title">Contact</h2>
+      <p class="sub">For partnerships, press, or elite access: <a href="mailto:team@sloanesterling.com" class="btn" style="display:inline-flex">team@sloanesterling.com</a></p>
+    </section>
+      <!-- EARLY ACCESS SIGNUP -->
+    <section id="early" class="section wrap" aria-labelledby="early-title">
+      <span class="eyebrow">VIP Drop</span>
+      <h2 id="early-title" class="title">Early Access — Be First</h2>
+      <p class="sub">Get first access to <strong>Fall Edit</strong>, <strong>Nike Sportswear</strong>, and <strong>Luxury Dupes</strong> the moment they go live. No spam — just elite access.</p>
+      <form id="earlyForm" class="card" style="max-width:780px; margin:16px 0; padding:16px" onsubmit="return joinEarly(event)">
+        <div class="body" style="display:grid; gap:12px">
+          <div style="display:grid; gap:8px">
+            <label for="earlyEmail" style="opacity:.9">Email</label>
+            <input id="earlyEmail" name="email" type="email" required placeholder="you@sloanesterling.com" style="padding:12px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.18); background:rgba(255,255,255,.04); color:var(--text)" />
+          </div>
+          <div style="display:grid; gap:8px">
+            <label for="earlyChoice" style="opacity:.9">Collection</label>
+            <select id="earlyChoice" name="collection" style="padding:12px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.18); background:rgba(255,255,255,.04); color:var(--text)">
+              <option>Fall Edit</option>
+              <option>Nike Sportswear</option>
+              <option>Luxury Designer Look‑Alikes</option>
+              <option>All Collections</option>
+            </select>
+          </div>
+          <button class="btn primary" type="submit">Request Early Access</button>
+          <small class="sub">Submitting will open your mail app with a pre‑filled message to <strong>team@sloanesterling.com</strong>. Just press send.</small>
+        </div>
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap" style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap">
+      <small>© <span id="year"></span> Sloane Sterling. All rights reserved.</small>
+      <small>Accessibility: motion‑reduced experiences are respected automatically.</small>
+    </div>
+  </footer>
+
+  <script>
+    // Current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Lazy start hero video when visible & user allows motion
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const vid = document.getElementById('heroVideo');
+    if (!prefersReduced && 'IntersectionObserver' in window && vid) {
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if(e.isIntersecting){
+            // Switch to auto if previously none
+            if(vid.getAttribute('preload') === 'none') vid.setAttribute('preload','auto');
+            vid.play().catch(()=>{});
+            io.disconnect();
+          }
+        })
+      }, {threshold:.25});
+      io.observe(vid);
+    }
+
+    // Smooth scroll for in-page links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e => {
+        const id = a.getAttribute('href');
+        const el = document.querySelector(id);
+        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
+      })
+    })
+      // Early access mailto
+    function joinEarly(e){
+      e.preventDefault();
+      const email = document.getElementById('earlyEmail').value.trim();
+      const choice = document.getElementById('earlyChoice').value;
+      const to = 'team@sloanesterling.com';
+      const subject = encodeURIComponent('Early Access Request — ' + choice);
+      const body = encodeURIComponent(`Please notify me when ${choice} goes live.
+
+Email: ${email}
+`);
+      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+      return false;
+    }
+  </script>
+
+  <!--
+  ✨ IMPLEMENTATION NOTES
+  1) Place the following files in /assets/ :
+     - hero.mp4 (optimized, 1080x1920 or 1440x2560 portrait crop or cinematic 16:9; under ~3–6 MB; muted)
+     - hero-poster.jpg (1280–1920px wide, <300 KB)
+     - fall-edit.jpg, nike-edit.jpg, dupes-edit.jpg (1200x900, <300 KB each)
+     - og-cover.jpg for social sharing preview (1200x630)
+     - favicon.svg (or .ico)
+
+  2) Replace placeholder href="#" URLs with real links for your collections & partners.
+     Examples:
+       - Fall Edit → your Amazon Idea List / Storefront collection
+       - Nike Sportswear → curated list
+       - Luxury Dupes → your Prada/LV/Ferragamo look‑alikes list
+       - Amazon Storefront button → full storefront URL
+
+  3) Alt‑text discipline for SEO (required): when you upload preview images, rename files like
+       fall-edit-elevated-neutrals-layered-textures.jpg
+     and keep the <img alt="..."> lines descriptive with niche keywords.
+
+  4) Analytics (optional): add your GA4 or Plausible script in <head> for insights.
+
+  5) Accessibility: users with reduced‑motion preference will see the poster image instead of autoplay video.
+
+  6) Custom domain: add a CNAME file at repo root containing only:
+       sloanesterling.com
+     Then configure DNS per the deployment checklist I’ll share.
+  -->
+</body>
+</html>

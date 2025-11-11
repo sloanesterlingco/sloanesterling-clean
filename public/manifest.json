@@ -1,0 +1,26 @@
+{
+  "name": "LUXESCULPT™ | Precision Engineered Activewear",
+  "short_name": "LUXESCULPT™",
+  "description": "Sculpted precision for form, flow, and power — engineered to enhance movement and recovery. Limited to 300 Elite Builds.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/brand/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/brand/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/brand/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
