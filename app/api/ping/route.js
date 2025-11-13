@@ -1,3 +1,23 @@
 import { NextResponse } from "next/server";
-export async function GET() { return NextResponse.json({ message: "pong" }); }
+import { admin } from "@/app/library/firebase-admin";
 
+export async function GET() {
+  try {
+    const db = admin.firestore();
+    const ts = Date.now();
+
+    await db.collection("heartbeat").doc("ping").set({ ts }, { merge: true });
+
+    return NextResponse.json({ ok: true, ts });
+  } catch (err) {
+    console.error("PING ERROR:", err);
+    return NextResponse.json(
+      { ok: false, error: err.message },
+      { status: 500 }
+    );
+  }
+}
+
+export async function POST() {
+  return NextResponse.json({ ok: true, method: "POST" });
+}

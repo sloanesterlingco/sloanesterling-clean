@@ -1,8 +1,6 @@
 "use client";
 
-import BuyButton from "@/components/BuyButton";
-
-export default function HeroSection({ videoSrc, title, subtitle }) {
+export default function HeroSection({ videoSrc }) {
   return (
     <section className="relative w-full h-[90vh] flex items-center justify-center text-center overflow-hidden">
       {/* 🎥 Background Video */}
@@ -20,31 +18,29 @@ export default function HeroSection({ videoSrc, title, subtitle }) {
 
       {/* 💎 Hero Content */}
       <div className="relative z-20 flex flex-col items-center justify-center px-6">
+        {/* 🔥 New Hero Title */}
         <h1 className="text-5xl md:text-6xl font-extrabold text-white drop-shadow-[0_0_10px_rgba(0,0,0,0.5)]">
-          {title}
+          Coming Summer 2026
         </h1>
+
+        {/* 🔥 New Subheadline */}
         <p className="mt-4 max-w-2xl text-lg md:text-xl text-neutral-300 font-light">
-          {subtitle}
+          The most revolutionary running muscle-mapping compression system ever engineered for the general population.
         </p>
 
-        {/* 🛍️ Buttons */}
+        {/* 📝 Waitlist Button */}
         <div className="mt-8 flex flex-col sm:flex-row items-center gap-4">
-          {/* GOLD */}
-          <BuyButton
-            priceId={process.env.NEXT_PUBLIC_STRIPE_PRICE_GOLD}
-            label="LuxeSculpt Gold Edition"
+          <a
+            href="/waitlist"
             className="bg-[#F5C84C] hover:bg-[#e6b93f] text-black font-semibold shadow-md transition-all duration-300 rounded-full px-8 py-3"
-          />
-          {/* COPPER */}
-          <BuyButton
-            priceId={process.env.NEXT_PUBLIC_STRIPE_PRICE_COPPER}
-            label="LuxeSculpt Brushed Copper"
-            className="bg-gradient-to-br from-[#b36b40] to-[#8a4f28] hover:from-[#a25e37] hover:to-[#7c4124] text-black font-semibold shadow-md transition-all duration-300 rounded-full px-8 py-3"
-          />
+          >
+            Join the Waitlist
+          </a>
         </div>
 
+        {/* ❗ Remove the “300 builds worldwide” line or replace it */}
         <p className="mt-6 text-xs text-neutral-500 uppercase tracking-widest">
-          Limited to 300 builds worldwide
+          Limited early access reservations open soon
         </p>
       </div>
     </section>
