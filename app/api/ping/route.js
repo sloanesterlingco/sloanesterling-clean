@@ -1,15 +1,19 @@
 import { NextResponse } from "next/server";
-import { admin } from "@/app/library/firebase-admin";
+import { admin } from "@/library/firebase-admin";
 
 export async function GET() {
   try {
-    const db = admin.firestore();
-    const ts = Date.now();
-
-    await db.collection("heartbeat").doc("ping").set({ ts }, { merge: true });
-
-    return NextResponse.json({ ok: true, ts });
+    return NextResponse.json({
+      ok: true,
+      message: "Ping success",
+    });
   } catch (err) {
-    return NextResponse.json({ error: err.message }, { status: 500 });
+    return NextResponse.json(
+      {
+        ok: false,
+        error: err.message,
+      },
+      { status: 500 }
+    );
   }
 }
