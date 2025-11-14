@@ -1,12 +1,15 @@
 import * as admin from "firebase-admin";
 
+let firebaseApp;
+
 if (!admin.apps.length) {
   const creds = JSON.parse(process.env.FIREBASE_ADMIN_CREDENTIALS_JSON || "{}");
 
-  admin.initializeApp({
+  firebaseApp = admin.initializeApp({
     credential: admin.credential.cert(creds),
-    databaseURL: process.env.FIREBASE_DATABASE_URL,
   });
+} else {
+  firebaseApp = admin.app();
 }
 
-export { admin };
+export { admin, firebaseApp };
