@@ -1,6 +1,6 @@
 import "./globals.css";
-import NavBar from "@/components/NavBar";
-import Footer from "@/components/Footer";
+import NavBar from "@/app/components/NavBar";
+import Footer from "@/app/components/Footer";
 
 export const metadata = {
   title: "LuxeSculpt™ — Engineered for Movement",
