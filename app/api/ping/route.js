@@ -10,14 +10,6 @@ export async function GET() {
 
     return NextResponse.json({ ok: true, ts });
   } catch (err) {
-    console.error("PING ERROR:", err);
-    return NextResponse.json(
-      { ok: false, error: err.message },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: err.message }, { status: 500 });
   }
-}
-
-export async function POST() {
-  return NextResponse.json({ ok: true, method: "POST" });
 }
