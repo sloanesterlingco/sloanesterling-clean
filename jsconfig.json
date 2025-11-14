@@ -3,9 +3,7 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["app/*"]
-    },
-    "module": "ESNext",
-    "moduleResolution": "NodeNext"
+    }
   },
-  "exclude": ["node_modules"]
+  "include": ["app", "library"]
 }
